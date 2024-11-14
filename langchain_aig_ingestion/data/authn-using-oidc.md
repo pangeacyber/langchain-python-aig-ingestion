@@ -33,20 +33,3 @@ At any point after this, the app can request in-scope information from the user�
 Figure 1 depicts this visually:
 
 There are protocol details not covered in the above overview, e.g., PCKE flows being used for mobile clients due to higher risk of code interception\[[5](https://auth0.com/docs/get-started/authentication-and-authorization-flow/authorization-code-flow-with-proof-key-for-code-exchange-pkce)]. Check references if you are going to implement OIDC yourself.
-Benefits and considerations for supporting OIDC in your app
-Beyond the improved user convenience and streamlined sign-up process, your app can potentially reap the following advantages when incorporating OIDC authentication with at least one provider:
-
-- OIDC establishes a user’s identity, which allows you to provide each user with exactly the right access and permissions, safeguarding user data and reducing abuse.
-- With well-chosen IdPs, you are likely to have better account security than with your own authentication implementation since the providers would have larger skilled teams working to ensure the security of the service. Further, you can reduce your liability risks for credential breaches since the IdP handles sensitive login information instead of your app.
-- Once your app has support for one IdP, it is easier to add support for additional IdPs, increasing the chance of all users finding a provider they can use.
-- With OIDC your app can have access to various details such as email address, profile picture, and friends from the user’s account on the IdP, provided the IdP supports that and the user consents. This can enrich the user experience or your business or mission.
-- OIDC can be used to support multi-tenancy within your app, with users coming from different organizations.
-- You will likely experience reduced ongoing support costs for your authentication workflow, including not needing to support, e.g., users that have forgotten passwords, yourself.
-- You are using a well-paved path since OIDC is widely adopted. The effort to integrate OIDC into your app may be lowered due to available APIs and the different OIDC client libraries and SDKs that are available for popular languages and platforms.
-  Consider the following factors when using OIDC for your app:
-- Be sure to use an IdP that maintains a high security standard, has high availability, and is unlikely to unexpectedly cease operations.
-- It is important to safeguard the security tokens for each session and your app’s issued client key and ID. Choose [storage](/securebydesign/secrets-how/) such as an online vault that will guard against unauthorized access and store these [secrets](/securebydesign/?series=secrets) in encrypted form. Limit the roles that can read them.
-- Even though you are delegating the actual authentication, there is still implementation work – your app will need to implement integration with IdPs including handling redirects from the provider. OIDC is a standard though, so much of that work can be reused for different IdPs.
-- As is typical with outsourcing, with social login, you will have less control, in this case over the strength of authentication. That strength will depend on what the provider allows the user to do and the user’s level of awareness and care. Providers may honor certain `acr_values` in requests such as `mfa`\[[6](https://openid.net/specs/openid-connect-core-1_0.html#IDToken)] but nothing inherent to the protocol ensures that IdPs will enforce it at all or in exactly the way you want.
-- Your app should emit [audit logs](/securebydesign/secure-audit-logging-overview/) for at least successful and unsuccessful logins, but be sure not to disclose security tokens there or elsewhere.
-- Some potential users may be wary of what will be shared from the IdP, either reasonably or due to lack of knowledge that, for example, that their password is not shared and that the app will not be able to post to their feed.

@@ -9,7 +9,7 @@ from our [Secure by Design Hub][] included in `langchain_aig_ingestion/data`.
 ## Prerequisites
 
 - Python v3.12 or greater.
-- pip v24.2 or [uv][] v0.4.29.
+- pip v24.2 or [uv][] v0.5.11.
 - A [Pangea account][Pangea signup] with AI Guard enabled.
 - An [OpenAI API key][OpenAI API keys].
 

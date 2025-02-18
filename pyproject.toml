@@ -10,7 +10,7 @@ dependencies = [
     "faiss-cpu>=1.10.0",
     "langchain>=0.3.18",
     "langchain-community>=0.3.17",
-    "langchain-openai>=0.3.5",
+    "langchain-openai>=0.3.6",
     "pangea-sdk==5.2.0b2",
     "pydantic>=2.10.6",
 ]

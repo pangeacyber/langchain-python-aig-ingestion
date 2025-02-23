@@ -38,8 +38,8 @@ class GuardedTextLoader(TextLoader):
             guarded = self._client.guard_text(doc.page_content)
             assert guarded.result
 
-            if guarded.result.redacted_prompt:
-                yield doc.model_copy(update={"page_content": guarded.result.redacted_prompt})
+            if guarded.result.prompt_text:
+                yield doc.model_copy(update={"page_content": guarded.result.prompt_text})
                 continue
 
             yield doc

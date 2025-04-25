@@ -2,7 +2,8 @@ version = 1
 revision = 2
 requires-python = ">=3.12"
 resolution-markers = [
-    "python_full_version >= '3.12.4'",
+    "python_full_version >= '3.13'",
+    "python_full_version >= '3.12.4' and python_full_version < '3.13'",
     "python_full_version < '3.12.4'",
 ]
 
@@ -565,7 +566,7 @@ requires-dist = [
     { name = "click", specifier = "==8.1.8" },
     { name = "faiss-cpu", specifier = "==1.10.0" },
     { name = "langchain", specifier = "==0.3.24" },
-    { name = "langchain-community", specifier = "==0.3.20" },
+    { name = "langchain-community", specifier = "==0.3.22" },
     { name = "langchain-openai", specifier = "==0.3.14" },
     { name = "pangea-sdk", specifier = "==6.0.0" },
     { name = "pydantic", specifier = "==2.11.3" },
@@ -579,7 +580,7 @@ dev = [
 
 [[package]]
 name = "langchain-community"
-version = "0.3.20"
+version = "0.3.22"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "aiohttp" },
@@ -595,9 +596,9 @@ dependencies = [
     { name = "sqlalchemy" },
     { name = "tenacity" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/86/bb/a07609679781199738934226bb2764c12541573bc4feeaf21e9f3ad5caf4/langchain_community-0.3.20.tar.gz", hash = "sha256:bd83b4f2f818338423439aff3b5be362e1d686342ffada0478cd34c6f5ef5969", size = 33221203, upload_time = "2025-03-18T22:07:34.81Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/04/a9/32b4fb08b82b264cba1096d7daa49de808e117046ebf9df4c382e23791db/langchain_community-0.3.22.tar.gz", hash = "sha256:36284687a9f64bc7820c0140beb3b96393f6c74c0b7ad8ba04ac35d673fe0988", size = 33230274, upload_time = "2025-04-22T15:38:51.919Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/ab/4b/2652cfd2baa482cb3cdbec1ccccae1674418b7576f21ba7724d8730de9db/langchain_community-0.3.20-py3-none-any.whl", hash = "sha256:ea3dbf37fbc21020eca8850627546f3c95a8770afc06c4142b40b9ba86b970f7", size = 2524455, upload_time = "2025-03-18T22:07:32.064Z" },
+    { url = "https://files.pythonhosted.org/packages/bb/bb/ebd0f33408f95ebfdb48e2a551c50506c46efc57b836b57c792ccd14290d/langchain_community-0.3.22-py3-none-any.whl", hash = "sha256:02ecdc669408d587b9dda78462dbbe8c27168edd26bb205630d0bc753e7cce6b", size = 2529327, upload_time = "2025-04-22T15:38:49.864Z" },
 ]
 
 [[package]]
